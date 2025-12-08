@@ -21,16 +21,9 @@ fn parse_equation(mut equation_strs: Vec<Vec<char>>) -> Equation {
 fn parse_input(input: &str) -> InputData {
     let mut lines: Vec<Chars> = input.lines().map(|line| line.chars()).collect();
     let n = lines.len();
-    let new_raw_equation = || {
-        let mut v = Vec::new();
-        for _ in 0..n {
-            v.push(Vec::new());
-        }
-        v
-    };
 
     let mut raw_equations: Vec<Vec<Vec<char>>> = Vec::new();
-    raw_equations.push(new_raw_equation());
+    raw_equations.push(vec![Vec::new(); n]);
     'outer: loop {
         let mut char_vec = Vec::new();
         for i in 0..n {
@@ -40,7 +33,7 @@ fn parse_input(input: &str) -> InputData {
             char_vec.push(char);
         }
         if char_vec.iter().all(|c| char::is_whitespace(*c)) {
-            raw_equations.push(new_raw_equation());
+            raw_equations.push(vec![Vec::new(); n]);
         } else {
             let last_index = raw_equations.len() - 1;
             for i in 0..n {
