@@ -86,7 +86,7 @@ fn part2(input_data: &InputData) {
 }
 
 pub fn solve() {
-    let input_data = parse_input(&read_file("inputs/day6_example.txt"));
+    let input_data = parse_input(&read_file("inputs/day6.txt"));
     part1(&input_data);
     part2(&input_data);
 }
