@@ -1,8 +1,6 @@
-use std::ops::Index;
+use crate::tools::read_file;
 
 use itertools::Itertools;
-
-use crate::tools::read_file;
 
 type Point = (i64, i64, i64);
 type Edge = (usize, usize);
@@ -82,10 +80,10 @@ fn part2((points, pairs): &InputData) {
             num_groups -= 1;
         } else if group[*i] == group[*j] {
             continue;
-        } else if (group[*i] == -1) {
+        } else if group[*i] == -1 {
             group[*i] = group[*j];
             num_groups -= 1;
-        } else if (group[*j] == -1) {
+        } else if group[*j] == -1 {
             group[*j] = group[*i];
             num_groups -= 1;
         } else {

@@ -2,8 +2,6 @@ use itertools::Itertools;
 
 use crate::tools::read_file;
 
-use std::iter::zip;
-use std::os::raw;
 use std::str::Chars;
 
 type Equation = (Vec<Vec<char>>, fn(u64, u64) -> u64);

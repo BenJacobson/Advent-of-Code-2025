@@ -1,7 +1,5 @@
 use crate::tools::read_file;
 
-use std::collections::HashSet;
-
 type InputData = Vec<Vec<bool>>;
 
 const DIRS: [(i32, i32); 8] = [

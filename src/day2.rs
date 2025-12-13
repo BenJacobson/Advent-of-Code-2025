@@ -1,7 +1,6 @@
 use crate::tools::read_file;
 
 use rayon::prelude::*;
-use std::iter;
 
 type InputData = Vec<(u64, u64)>;
 
